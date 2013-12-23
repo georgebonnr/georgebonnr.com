@@ -21,8 +21,10 @@ $(document).ready(function() {
   $('#perspective').css('background-image', 'url("./images/GEORGE_blur9-7.jpg")');
 
   $('.onepage-pagination').hover(function(e){
+    window.navShowing = true;
     $(this).children().children().stop().fadeTo(300,1);
   },function(e){
+    navShowing = false;
     $(this).children().children().filter('.navtitle').stop().fadeTo(300,0);
     $(this).children().children().filter('.hidden').stop().fadeTo(300,0);
   });

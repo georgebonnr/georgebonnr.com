@@ -22,7 +22,10 @@ var onepage = function($){
   // is too strong for some devices, consider removing and increasing
   // quiet Period.
 
-  var nouns = ['one','two','three','four']
+  var nouns = ['one','two','three','four'];
+
+  // move along officer, no shameless hacks to see here.
+  window.navShowing = false;
   
   var defaults = {
     sectionContainer: "section",
@@ -157,7 +160,10 @@ var onepage = function($){
       current = $(settings.sectionContainer + "[data-index='" + index + "']");
       next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
       
-      $('a').filter('.active').addClass('hidden').fadeTo(400,0);
+      var newHide = $('a').filter('.active').addClass('hidden')
+      if (!navShowing) {
+        newHide.fadeTo(400,0);
+      }
 
       if (index === 5) {
         setTimeout(function(){
@@ -179,17 +185,20 @@ var onepage = function($){
       if (typeof settings.beforeMove == 'function') settings.beforeMove(current.data("index"));
       current.removeClass("active");
       next.addClass("active");
-      if(settings.pagination == true) {
+      if(settings.pagination === true) {
         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
         $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
         if (next.data("index") === 1) {
-          $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("hidden").delay(500).fadeTo(400,0);
+          var $last = $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("hidden");
+          if (!window.navShowing) {
+            $last.delay(500).fadeTo(400,0);
+          }
         }
       }
       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-      $("body").addClass("viewing-page-"+next.data("index"))
+      $("body").addClass("viewing-page-"+next.data("index"));
       
-      if (history.replaceState && settings.updateURL == true) {
+      if (history.replaceState && settings.updateURL === true) {
         var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (index - 1);
         history.pushState( {}, document.title, href );
       }
