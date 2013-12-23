@@ -56,7 +56,6 @@ body, .onepage-wrapper, html {
 }
 .onepage-pagination li {
   padding: 5;
-  /*text-align: center;*/
 }
 .onepage-pagination li a{
   padding: 0px;
@@ -77,33 +76,13 @@ body, .onepage-wrapper, html {
   height: 10px;
   background: none;
   border: 1px solid white;
-  /*border-radius: 10px;*/
-  /*border-radius: 8px;*/
-  /*-webkit-border-radius: 8px;*/
-  /*-moz-border-radius: 8px;*/
 }
-
-
-/*.onepage-pagination li a:before{
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border: 1px solid white;
-  margin-top: -4px;
-  left: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-}*/
 
 .onepage-pagination li a.active:before{
   width: 10px;
   height: 10px;
   background: white;
   border: 1px solid white;
-  /*border-radius: 10px;*/
-  /*margin-top: -4px;*/
-  /*right: 8px;*/
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
