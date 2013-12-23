@@ -1,17 +1,10 @@
 @charset "utf-8";
 @import "bourbon/bourbon";
-// $visual-grid: true;
 $visual-grid-index: front;
 $visual-grid-color: white;
 @import "neat/neat";
 @import "neat/neat-helpers";
 
-// $visual-grid: true;
-// $visual-grid-index: front;
-// $visual-grid-color: white;
-// @import "neat/neat";
-// @import "neat/neat-helpers";
-// // try changing these variables
 $grid-columns: 12;
 $max-width: em(900);
 $content-background-color: #eee;
@@ -21,8 +14,6 @@ $base-line-height: 1.647em;
 $top-gap: 1em;
 $blue:#1c56ad;
 
-//Variables
-//breakpoints
 $topnav: new-breakpoint(max-width 1000px 12);
 $mobile: new-breakpoint(max-width 500px 4);
 $tablet: new-breakpoint(max-width 800px 4);
@@ -74,18 +65,7 @@ h1 {
 h2 {
 	margin: 0;
 	padding-bottom:0.8em;
-	// text-align: center;
-	// font-family: 'Cedarville Cursive', cursive;
-font-family: 'La Belle Aurore', cursive;
-// font-family: 'Yesteryear', cursive;
-// font-family: 'Alex Brush', cursive;
-// font-family: 'Dynalight', cursive;
-// font-family: 'Seaweed Script', cursive;
-// font-family: 'Pacifico', cursive;
-// font-family: 'Satisfy', cursive;
-// font-family: 'Dawning of a New Day', cursive;
-// font-family: 'Arapey', serif;
-	// font-style: italic;
+	font-family: 'La Belle Aurore', cursive;
 	font-weight: 400;
 	font-size: 2.2em;
 }
@@ -113,15 +93,6 @@ h3 {
 	padding-top:0.8em;
 }
 
-// a {
-// 	color: $link-color;
-// 	text-decoration: underline;
-// 	font-weight:700;
-// 	&:hover {
-// 		cursor: pointer;
-// 	}
-// }
-
 ul{
 	list-style:none;
 	padding:0;
@@ -137,10 +108,6 @@ li a {
 	border: none;
 }
 
-// #container {
-// 	@include outer-container;
-// }
-
 section {
 	padding: 0 0 30em 0;
 }
@@ -149,14 +116,10 @@ p {
 	margin-top:1em;
 	margin-bottom:1em;
 	line-height:1.8em;
-	// padding-top: 2em;
-	// padding: 0 2em 0 8em;
-	// text-align: center;
 }
 
 a {
 		border-bottom: 1px solid rgba(white,0.5);
-		// padding-bottom: 1px;
 		text-decoration: none;
 		font-weight: 700;
 		color: white;
@@ -164,33 +127,25 @@ a {
 	}
 
 .footer {
-	// margin-bottom: 0.5em;
 	margin: 0 auto;
 	position: fixed;
-	// left: 0px;
 	bottom: 0px;
 	width: 960px;
 	height: 4em;
 	font-size: 1em;
-	// line-height: 1.5em;
 	border-top: 1px solid white;
-	// border-right: 1px solid white;
-	// border-left: 1px solid white;
 	padding-top: 1.1em;
-	// padding-bottom: 0.75em;
 
 	a {
 		text-decoration: none;
 	}
 		.divider {
 			display: inline;
-			// border-right: 2px solid white;
 		}
 		.left {
 			display: inline-block;
 			width: 53%;
 			text-align: center;
-			// border-right: 1px solid white;
 			ul {
 				margin: 0;
 				padding: 0;
@@ -200,24 +155,14 @@ a {
 				padding: 0;
 				display: inline-block;
 				margin-left: 1em;
-				// margin-right: 0.5em;
 			}
 		}
 		.right {
 			display: inline-block;
 			width: 46%;
 			margin-left: 0px;
-			// border-left: 1px solid white;
 			text-align: center;
 			font-weight: 400;
-		}
-
-		#email {
-			// margin-left: 0;
-		}
-
-		.emotion {
-			// width: 2em;
 		}
 }
 
@@ -231,14 +176,11 @@ a {
 	text-align:left;
 	line-height:1.4em;
 	font-weight:400;
-	// background-color: pink;
 }
 
 .ticker-wrap {
 	margin: 0 auto;
-	// padding:0 3em;
 	width:100%;
-	// background:green;
 }
 
 .title {
@@ -254,20 +196,13 @@ a {
 }
 
 .wrap {
-	// @include outer-container;
 	width: 960px;
 	margin: 0 auto;
-	// padding-left: 7em;
-	// text-align: center;
 }
 
 .intro {
 	text-align: center;
 }
-
-// .workcenter {
-// 	text-align:center;
-// }
 
 #contact {
 	padding: 2em 0 30em 0;
@@ -283,18 +218,12 @@ a {
 
 #perspective {
 	padding: 2em 0 30em 0;
-	// background-color: #65c4c7;
-	// background-color: #5aaec2;
-	// background-image:url('../images/GEORGE_blur9-7.jpg');
 	background-size:2000px;
 	background-repeat:no-repeat;
 	background-position:-500px;
 	.par {
 		padding: 0 2em 0 9em;
 	}
-	// h1 {
-	// 	margin-top: 0.83em;
-	// }
 	h2 {
 		padding-bottom:0.8em;
 	}
@@ -305,17 +234,12 @@ a {
 	display: none;
 	width: 100%;
 	height: 100%;
-	// background-color: (gray,0.5);
 	background-color: rgba(black,0.5);
 	z-index: 20;
 }
 
 #things {
 	padding: 2em 0 0 0;
-	// background-color:#c7b54e;
-	// background-color:#917a30 ;
-	// background-color:#7b7029 ;
-	// background-color:#8da136 ;
 	background-color:#87963B;
 	.par {
 		margin: 0 2em 0 9em;
@@ -332,10 +256,6 @@ a {
 	h2 {
 		margin-bottom: 0;
 		padding-bottom:0.5em;
-	}
-	h3 {
-		// margin:0;
-		// padding:0;
 	}
 }
 
@@ -370,7 +290,6 @@ a {
 	margin: 180 auto;
 	width: 400px;
 	height: 400px;
-	// background-image:url('../images/specialist.jpg');
 	background-size: 100%;
 	z-index: 100;
 	// border: 1px solid white;
@@ -382,13 +301,7 @@ a {
 	font-size: 100px;
 	width: 630px;
 	margin: 30 auto;
-	// margin: 200 auto;
-	// width: 400px;
-	// height: 400px;
-	// background-image:url('../images/specialist.jpg');
-	// background-size: 100%;
 	z-index: 100;
-	// border: 1px solid white;
 }
 
 #gtr-gold #gtr-black {
@@ -400,7 +313,6 @@ a {
 	display: none;
 	padding: 0;
 	text-align: center;
-	// margin-top: 20px;
 	line-height: 3.8em;
 	height: 400px;
 	width: 400px;
@@ -422,20 +334,14 @@ a {
 	}
 	h3 {
 		padding-top:0.8em;
-		// margin-bottom: 0.8em;
 	}
 	background-color: #b83030;
 	.well {
-		// width: 50em;
 		line-height:1.4em;
 		margin-top: 1.1em;
 		margin-bottom: 2.1em;
 		padding-left: 1.5em;
-		// margin-left: -1.5em;
-		// background-color: rgba(black,0.1);
 		border-left: 1px solid rgba(white,0.5);
-		// border-right: 1px solid rgba(white,0.5);
-		// margin-bottom: 2.1em;
 	}
 }
 
@@ -454,11 +360,6 @@ a {
 
 .h3 {
 	margin-right: 10px;
-	// font-size: 1.3em;
-}
-
-.things {
-	// margin-top: 30px;
 }
 
 .things-left {
@@ -485,24 +386,14 @@ a {
 }
 
 .inline {
-	// border-left:1px solid rgba(white,1);
-	// display:inline-block;
 	vertical-align:top;
-	// padding:0 1em;
-	// margin:3em;
-
 }
 
 .imgtest {
 	display:inline-block;
-	// margin-top: 20px;
 	width: 80px;
 	height: 80px;
 	background-color: black;
-}
-
-.thing-detail {
-	// font-size: 1.3em;
 }
 
 .text-center {
@@ -524,16 +415,12 @@ a {
 		margin-top: 0.83em;
 		margin-bottom: 0.8em;
 	}
-	h2 {
-		// padding-bottom:2em;
-	}
 }
 
 #intro {
 	background-color: white;
 	padding-top: 2em;
 	padding-bottom: 25em;
-	// height: 50em;
 	color: #333;
 }
 
@@ -560,31 +447,4 @@ a {
 	border-bottom: 18px solid #333;
 	opacity: 0;
 }
-
-// .out-wrap {
-// 	width: 800px;
-// 	margin: 0 auto;
-// 	position: fixed;
-// }
-
-// .circle {
-// 	margin-top: 40px;
-// 	margin-bottom: 40px;
-// 	border: .12em solid white;
-// 	border-radius: 50%;
-// 	width: 12px;
-// 	height: 12px; 
-// }
-
-// .circle:hover {
-// 	background-color: white; 
-// }
-
-// .side-nav {
-// 	// width: 600px;
-// 	// margin-left: -100px;
-// 	left: 11%;
-// 	top: 24%;
-// 	position:fixed;
-// }
 
