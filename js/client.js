@@ -43,6 +43,7 @@ $(document).ready(function() {
 
   $albumModal.css('background-image', 'url("./images/specialist.jpg")');
   $play.html('&#9654;');
+  $play.show().hide();
   $albumModal.show().hide();
   $('#gtr-gold').attr('src', './images/match_gtrs_gold.jpg');
   $('#gtr-black').attr('src', './images/match_gtrs_black.jpg');
