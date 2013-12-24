@@ -56,7 +56,7 @@ $(document).ready(function() {
     for (var i = 0; i < tracks.length; i++) {
       var track = $('#' + tracks[i]);
       track.attr('src','media/'+ tracks[i] + fileType)
-        .get(0).load();
+        // .get(0).load();
       player[i] = track[0];
     }
     return player;
