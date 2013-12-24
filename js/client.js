@@ -128,8 +128,6 @@ $(document).ready(function() {
     }
   };
 
-  console.log('LATEST');
-
   var displayModal = function(overlay,lightbox,button,callback) {
     if (typeof button === 'function') {
       callback = button;
