@@ -45,22 +45,22 @@ $(document).ready(function() {
   $('#gtr-gold').attr('src', './images/match_gtrs_gold.jpg');
   $('#gtr-black').attr('src', './images/match_gtrs_black.jpg');
 
-  var makePlayer = function(tracks) {
-    var player = {
-      playing: false,
-      track: null
-    };
-    var isFirefox = typeof InstallTrigger !== 'undefined';
-    var fileType = '';
-    fileType += isFirefox ? '.ogg' : '.mp3';
-    for (var i = 0; i < tracks.length; i++) {
-      var track = $('#' + tracks[i]);
-      track.attr('src','media/'+ tracks[i] + fileType)
-        // .get(0).load();
-      player[i] = track[0];
-    }
-    return player;
-  };
+  // var makePlayer = function(tracks) {
+  //   var player = {
+  //     playing: false,
+  //     track: null
+  //   };
+  //   var isFirefox = typeof InstallTrigger !== 'undefined';
+  //   var fileType = '';
+  //   fileType += isFirefox ? '.ogg' : '.mp3';
+  //   for (var i = 0; i < tracks.length; i++) {
+  //     var track = $('#' + tracks[i]);
+  //     track.attr('src','media/'+ tracks[i] + fileType)
+  //       // .get(0).load();
+  //     player[i] = track[0];
+  //   }
+  //   return player;
+  // };
 
   var player = makePlayer(['setonfire','badluck','gotmegood']);
 
