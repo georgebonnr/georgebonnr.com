@@ -42,9 +42,11 @@ $(document).ready(function() {
   });
 
   $albumModal.css('background-image', 'url("./images/specialist.jpg")');
+  $albumModal.show();
   $play.html('&#9654;');
   $play.show().hide();
-  $albumModal.show().hide();
+  $albumModal.hide();
+  console.log('albumModal')
   $('#gtr-gold').attr('src', './images/match_gtrs_gold.jpg');
   $('#gtr-black').attr('src', './images/match_gtrs_black.jpg');
 
