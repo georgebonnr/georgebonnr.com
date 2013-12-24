@@ -164,11 +164,11 @@ $(document).ready(function() {
   });
 
   $overlay.click(function(){
-    if (player.playing) {
+    if (player && player.playing) {
       player[player.track].pause();
       player[0].currentTime = 0;
+      player.playing = false;
     }
-    player.playing = false;
     closeModal($(this), $albumModal, function(){
       $specialist.closest('.par').fadeIn(100);
     }, true);
