@@ -128,7 +128,7 @@ $(document).ready(function() {
     }
   };
 
-  console.log('LATEST')
+  console.log('LATEST');
 
   var displayModal = function(overlay,lightbox,button,callback) {
     if (typeof button === 'function') {
@@ -139,7 +139,7 @@ $(document).ready(function() {
     $(this).swipeEvents().unbind("swipeDown swipeUp");
     $(document).unbind('keydown');
     overlay.fadeIn(300);
-    lightbox.fadeIn(300);
+    lightbox.fadeIn(100);
     button && button.fadeIn(300);
   };
 
@@ -158,11 +158,11 @@ $(document).ready(function() {
   $specialist.on('click', function(e) {
     e && e.preventDefault();
     $play.html('&#9654;');
-    if (!player) {
-      player = makePlayer(tracks);
-    }
     $(this).closest('.par').fadeOut(200, function(){
       displayModal($overlay,$albumModal);
+      if (!player) {
+        player = makePlayer(tracks);
+      }
     });
   });
 
