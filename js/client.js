@@ -42,6 +42,7 @@ $(document).ready(function() {
   });
 
   $albumModal.css('background-image', 'url("./images/specialist.jpg")');
+  $albumModal.show().hide();
   $('#gtr-gold').attr('src', './images/match_gtrs_gold.jpg');
   $('#gtr-black').attr('src', './images/match_gtrs_black.jpg');
 
@@ -127,6 +128,8 @@ $(document).ready(function() {
     }
   };
 
+  console.log('LATEST')
+
   var displayModal = function(overlay,lightbox,button,callback) {
     if (typeof button === 'function') {
       callback = button;
@@ -136,7 +139,7 @@ $(document).ready(function() {
     $(this).swipeEvents().unbind("swipeDown swipeUp");
     $(document).unbind('keydown');
     overlay.fadeIn(300);
-    lightbox.fadeTo(300,1);
+    lightbox.fadeIn(300);
     button && button.fadeIn(300);
   };
 
