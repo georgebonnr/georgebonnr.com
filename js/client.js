@@ -136,7 +136,7 @@ $(document).ready(function() {
     $(this).swipeEvents().unbind("swipeDown swipeUp");
     $(document).unbind('keydown');
     overlay.fadeIn(300);
-    lightbox.fadeIn(300);
+    lightbox.fadeTo(300,1);
     button && button.fadeIn(300);
   };
 
