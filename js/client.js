@@ -55,14 +55,14 @@ $(document).ready(function() {
     fileType += isFirefox ? '.ogg' : '.mp3';
     for (var i = 0; i < tracks.length; i++) {
       var track = $('#' + tracks[i]);
-      track.attr('src','media/'+ tracks[i] + fileType);
-        // .get(0).load();
+      track.attr('src', 'media/' + tracks[i] + fileType);
       player[i] = track[0];
     }
     return player;
   };
 
-  var player = makePlayer(['setonfire','badluck','gotmegood']);
+  var tracks = ['setonfire','badluck','gotmegood'];
+  var player = null;
 
   $('.controls').hover(function(){
     $play.show();
@@ -155,14 +155,19 @@ $(document).ready(function() {
   $specialist.on('click', function(e) {
     e && e.preventDefault();
     $play.html('&#9654;');
-    player[0].currentTime = 0;
+    if (!player) {
+      player = makePlayer(tracks);
+    }
     $(this).closest('.par').fadeOut(200, function(){
       displayModal($overlay,$albumModal);
     });
   });
 
   $overlay.click(function(){
-    player.playing && player[player.track].pause();
+    if (player.playing) {
+      player[player.track].pause();
+      player[0].currentTime = 0;
+    }
     player.playing = false;
     closeModal($(this), $albumModal, function(){
       $specialist.closest('.par').fadeIn(100);
