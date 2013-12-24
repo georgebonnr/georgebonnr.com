@@ -42,6 +42,7 @@ $(document).ready(function() {
   });
 
   $albumModal.css('background-image', 'url("./images/specialist.jpg")');
+  $play.html('&#9654;');
   $albumModal.show().hide();
   $('#gtr-gold').attr('src', './images/match_gtrs_gold.jpg');
   $('#gtr-black').attr('src', './images/match_gtrs_black.jpg');
@@ -155,7 +156,6 @@ $(document).ready(function() {
 
   $specialist.on('click', function(e) {
     e && e.preventDefault();
-    $play.html('&#9654;');
     $(this).closest('.par').fadeOut(200, function(){
       displayModal($overlay,$albumModal);
       if (!player) {
