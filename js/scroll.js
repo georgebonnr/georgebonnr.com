@@ -24,7 +24,7 @@ var onepage = function($){
 
   var nouns = ['one','two','three','four'];
 
-  // move along officer, no shameless hacks to see here.
+  // hax
   window.navShowing = false;
   
   var defaults = {
