@@ -11,6 +11,7 @@
   font-style: normal; }
 
 .main {
+  margin-bottom: 0;
   -webkit-transform: translate3d(0, -400%, 0);
   -moz-transform: translateY(0, -400%, 0);
   -ms-transform: translate3d(0, -400%, 0);
@@ -25,7 +26,9 @@ body {
   font-size: 17px;
   line-height: 1.647em;
   color: white;
-  background-color: white; }
+  background-color: white; 
+  margin: 0;
+}
 
 h1 {
   margin-before: 0;
