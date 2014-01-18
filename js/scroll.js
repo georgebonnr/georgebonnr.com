@@ -448,8 +448,6 @@ var onepage = function($){
       });
     }
   }
-
   return exports;
-  
 }(window.jQuery);
 
