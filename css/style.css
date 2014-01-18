@@ -3,6 +3,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+iframe { display:none; }
+
 @font-face {
   font-family: 'entypo';
   src: url("../scss/fonts/entypo.eot");
