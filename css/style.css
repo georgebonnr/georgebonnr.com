@@ -321,7 +321,7 @@ a {
   float: right; }
 
 #hello {
-  padding: 4em 0 30em 0;
+  padding: 0 0 30em 0;
   background-color: #1c56ad; }
   #hello .par {
     padding: 0 2em 0 9em; }
@@ -336,17 +336,18 @@ a {
   color: #333; }
 
 .intro-h1 {
-  margin-top: 9em;
-  font-size: 2em;
-  cursor: default; }
+  margin-top: 8.1em;
+  font-size: 2em; }
 
-.triangle {
+.triangle, .triangle-shift {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  text-align: center; }
+  text-align: center; 
+  
+  }
 
-.triangle-up {
+.triangle-up, .triangle-shift {
   margin-left: auto;
   margin-right: auto;
   width: 0;
@@ -355,3 +356,20 @@ a {
   border-right: 10px solid transparent;
   border-bottom: 18px solid #333;
   opacity: 0; }
+
+  .triangle-up {
+    padding-top: 2em;
+  }
+
+  .triangle-shift {
+    border-bottom: 0;
+    padding-bottom: 4em}
+
+  .triangle-white {
+    padding-top: 2em;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid white;
+  }

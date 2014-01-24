@@ -8,15 +8,17 @@ $(document).ready(function() {
     pagination: true,
     updateURL: false
   });
-
-  var $overlay      = $('#overlay');
-  var $albumModal   = $('.albumModal');
-  var $specialist   = $('#specialist');
-  var $play         = $('#play');
-  var $triangleUp   = $('.triangle-up');
-  var $match        = $('#match');
-  var $guitarsModal = $('.guitarsModal');
-  var $arrow        = $('.arrow');
+ 
+  var $overlay       = $('#overlay');
+  var $albumModal    = $('.albumModal');
+  var $specialist    = $('#specialist');
+  var $play          = $('#play');
+  var $triangleUp    = $('.triangle-up');
+  var $triangleWhite = $('.triangle-white');
+  var $match         = $('#match');
+  var $guitarsModal  = $('.guitarsModal');
+  var $arrow         = $('.arrow');
+  var $main          = $('.main');
 
   $('#perspective').css('background-image', 'url("./images/GEORGE_blur9-7.jpg")');
 
@@ -29,13 +31,13 @@ $(document).ready(function() {
     $(this).children().children().filter('.hidden').stop().fadeTo(300,0);
   });
 
-  $('.intro-h1').on('mouseover',function(){
-    $triangleUp.fadeTo(1500,1);
+  $('#intro').on('click',function(){
+    $main.moveUp();
   });
 
   setTimeout(function(){
-    $triangleUp.fadeTo(1000,1);
-  },1500);
+    $triangleUp.fadeTo(2000,1);
+  }, 600)
 
   $arrow.hover(function(e){
     e.preventDefault();
@@ -118,10 +120,10 @@ $(document).ready(function() {
         if (!$("body").hasClass("disabled-onepage-scroll")) {
           switch(e.which) {
             case 38:
-              if (tag != 'input' && tag != 'textarea') $('.main').moveUp();
+              if (tag != 'input' && tag != 'textarea') $main.moveUp();
             break;
             case 40:
-              if (tag != 'input' && tag != 'textarea') $('.main').moveDown();
+              if (tag != 'input' && tag != 'textarea') $main.moveDown();
             break;
             default: return;
           }
@@ -184,6 +186,9 @@ $(document).ready(function() {
     });
   });
 
+  $guitarsModal.click(function(e){
+    e.stopPropagation();
+  });
   $guitarsModal.click(function(e){
     e.stopPropagation();
   });
