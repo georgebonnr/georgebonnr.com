@@ -193,6 +193,7 @@ var onepage = function($){
       }
 
       if (index === 4) {
+        shown.hello = true;
         setTimeout(function(){
           $('.triangle-shift').stop().fadeTo(300,0);
         },300);
