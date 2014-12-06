@@ -152,8 +152,14 @@ var onepage = function($){
       current.removeClass("active");
       next.addClass("active");
       if(settings.pagination == true) {
-        $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active").removeClass("hidden").fadeTo(300,1);
-        $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active").removeClass("hidden").fadeTo(300,1);
+        var indexTarget = $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active").removeClass("hide");
+        if (index == 1) {
+          // borderFixFade(indexTarget,300,1)
+        } else {
+          // indexTarget.fadeTo(300,1)
+        }
+        var nextTarget = $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active").removeClass("hide");
+        // borderFixFade(nextTarget,300,1);
       }
       
       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
@@ -168,15 +174,13 @@ var onepage = function($){
     
     $.fn.moveUp = function() {
       var el = $(this)
+      var newHide = $squares.filter('.active').addClass('hide');
       index = $(settings.sectionContainer +".active").data("index");
-      if (index === 1) { return; }
+      if (index === 1) {
+        return;
+      }
       current = $(settings.sectionContainer + "[data-index='" + index + "']");
       next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
-      
-      var newHide = $('a').filter('.active').addClass('hidden');
-      if (!navShowing) {
-        newHide.fadeTo(400,0);
-      }
 
       if (index === 5) {
         setTimeout(function(){
@@ -217,9 +221,8 @@ var onepage = function($){
         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
         $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
         if (next.data("index") === 1) {
-          var $last = $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("hidden");
           if (!window.navShowing) {
-            $last.delay(500).fadeTo(400,0);
+            $($squares[0]).addClass("hide")
           }
         }
       }
@@ -375,16 +378,16 @@ var onepage = function($){
           }
 
           for (var i = page_index+1; i < 6; i++) {
-            $(".onepage-pagination li a" + "[data-index='" + i + "']").addClass("hidden");
-            $(".onepage-pagination li .navtitle" + "[data-index='" + i + "']").addClass("hidden");
+            $(".onepage-pagination li a" + "[data-index='" + i + "']").addClass("hide");
+            $(".onepage-pagination li .navtitle" + "[data-index='" + i + "']").addClass("hide");
           }
 
           for (i = page_index; i >= 1; i--) {
-            $(".onepage-pagination li a" + "[data-index='" + i + "']").removeClass("hidden").fadeTo(300,1);
+            $(".onepage-pagination li a" + "[data-index='" + i + "']").removeClass("hide").fadeTo(300,1);
           }
 
           if (page_index === 1) {
-            $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("hidden");
+            $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("hide");
           }
 
           pos = ((page_index - 1) * 100) * -1;

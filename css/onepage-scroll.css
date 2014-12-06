@@ -46,26 +46,16 @@ body, .onepage-wrapper, html {
 .navtitle {
   margin-left: 20px;
   margin-bottom: -10px;
-  opacity: 0;
   font-size: 16px;
   cursor: pointer;
 }
 
-.onepage-pagination:hover {
-  /*show all links*/
-}
 .onepage-pagination li {
   padding: 5;
 }
 .onepage-pagination li a{
   padding: 0px;
   display: block;
-}
-
-.onepage-pagination li a:hover{
-  padding: 0px;
-  display: block;
-  background: white;
 }
 
 .onepage-pagination li a:before{
@@ -79,10 +69,19 @@ body, .onepage-wrapper, html {
 }
 
 .onepage-pagination li a.active:before{
+  content: '';
   width: 10px;
   height: 10px;
   background: white;
   border: 1px solid white;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.hide:before {
+  opacity: 0;
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {

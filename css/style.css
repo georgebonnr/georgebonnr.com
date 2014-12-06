@@ -148,6 +148,11 @@ a {
   margin: 0 auto;
   width: 100%; }
 
+/*.bar {
+  color: yellow;
+  border-bottom: 1px solid white;
+}*/
+
 .title {
   font-size: 1em;
   font-weight: 700; }

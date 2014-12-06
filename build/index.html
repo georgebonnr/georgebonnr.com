@@ -9,28 +9,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
-<!-- 
-    <script type="text/javascript">
-      function goToAnchor() {
-        location.href = "myPage.html#5";
-      };
-    </script>
-     -->
 
     <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
 
-    <!-- Takana Script Tag. data-project must be the name of the project folder
-    <script type="text/javascript" data-project="personal" src="http://localhost:48626/javascripts/edge.js"></script>
-   -->
   </head>
   <body>
 
     <div id="overlay">
       
       <div class="albumModal">
-  <!--       <div class="back">
-          &#10060;
-        </div> -->
         <div class="controls">
           <div id="play">&#9654;</div>
           <audio id="badluck" src="" type="audio/mpeg"></audio>
@@ -47,28 +34,6 @@
 
   <!-- <div class="outer-wrap"> -->
       <div class="main">
-        <!-- <div class="out-wrap" -->
-          <!-- <div class="side-nav">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div> -->
-        <!-- </div> -->
-    <!-- 
-          <section id="contact">
-            <h1>Contact</h1>
-            <div class="wrap">
-              <div class="contact-wrap">
-                <h3><a href="gmail">Email</a></h3>
-                <h3><a href="github">Github</a></h3>
-                <h3><a href="twitter">Twitter</a></h3>
-                <h3><a href="linkedin">LinkedIn</a></h3>
-              </div>
-            </div>
-          </section>
-           -->
 
           <section id="perspective">
             
@@ -76,17 +41,6 @@
               <div class="par">
               <h1>Perspective</h1>
               <h2>is important.</h2>
-    <!--           <div class="par">
-                <br>
-                I think that the best work is done alongside friends.
-                <br><br>
-                I think that engineers are the most creative folks in the building, and should act like it.
-                <br><br>
-                Finally, I think that a perpetual desire to learn can be more than experience.
-                <br><br>
-                If you also see things a little bit differently, go ahead and drop me a line above. Let's talk!
-              </div> -->
-
 
                 <p>Approaching existing problems from new directions can yield revolutionary ideas.</p>
 
@@ -295,13 +249,6 @@
       var $arrow        = $('.arrow');
 
       $('#perspective').css('background-image', 'url("./images/GEORGE_blur9-7.jpg")');
-
-      $('.onepage-pagination').hover(function(e){
-        $(this).children().children().stop().fadeTo(300,1);
-      },function(e){
-        $(this).children().children().filter('.navtitle').stop().fadeTo(300,0)
-        $(this).children().children().filter('.hidden').stop().fadeTo(300,0)
-      });
 
       $('.intro-h1').on('mouseover',function(){
         $triangleUp.fadeTo(1500,1)

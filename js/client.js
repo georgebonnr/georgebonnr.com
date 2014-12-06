@@ -8,7 +8,9 @@ $(document).ready(function() {
     pagination: true,
     updateURL: false
   });
- 
+
+  $squares           = $('.squaresquare');
+  var $navTitles     = $('.onepage-pagination').children().children().filter('.navtitle');
   var $overlay       = $('#overlay');
   var $albumModal    = $('.albumModal');
   var $specialist    = $('#specialist');
@@ -19,16 +21,23 @@ $(document).ready(function() {
   var $guitarsModal  = $('.guitarsModal');
   var $arrow         = $('.arrow');
   var $main          = $('.main');
+  var tempHidden     = null
+
+  $navTitles.addClass("hide");
 
   $('#perspective').css('background-image', 'url("./images/GEORGE_blur9-7.jpg")');
 
   $('.onepage-pagination').hover(function(e){
-    window.navShowing = true;
-    $(this).children().children().stop().fadeTo(300,1);
+    navShowing = true;
+    tempHidden = $(this).children().children().filter('.hide')
+    tempHidden.removeClass("hide")
   },function(e){
     navShowing = false;
-    $(this).children().children().filter('.navtitle').stop().fadeTo(300,0);
-    $(this).children().children().filter('.hidden').stop().fadeTo(300,0);
+    tempHidden.addClass("hide")
+    // var titleTarget = $(this).children().children().filter('.navtitle').stop()
+    // var hiddenTarget = $(this).children().children().filter('.hidden').stop()
+    // borderFixFade(titleTarget,300,0);
+    // borderFixFade(hiddenTarget,300,0,true)
   });
 
   $('#intro').on('click',function(){
