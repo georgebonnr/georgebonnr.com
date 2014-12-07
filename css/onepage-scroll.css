@@ -48,6 +48,7 @@ body, .onepage-wrapper, html {
   margin-bottom: -10px;
   font-size: 16px;
   cursor: pointer;
+  transition: opacity 0.8s;
 }
 
 .onepage-pagination li {
@@ -56,6 +57,7 @@ body, .onepage-wrapper, html {
 .onepage-pagination li a{
   padding: 0px;
   display: block;
+  transition: opacity 0.8s;
 }
 
 .onepage-pagination li a:before{
@@ -76,12 +78,19 @@ body, .onepage-wrapper, html {
   border: 1px solid white;
 }
 
+/*@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}*/
+
 .hide {
+
   opacity: 0;
 }
 
 .hide:before {
-  opacity: 0;
+  animation: fadeIn 5s;
+  /*opacity: 0;*/
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {

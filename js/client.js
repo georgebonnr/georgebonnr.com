@@ -9,35 +9,40 @@ $(document).ready(function() {
     updateURL: false
   });
 
-  $squares           = $('.squaresquare');
-  var $navTitles     = $('.onepage-pagination').children().children().filter('.navtitle');
-  var $overlay       = $('#overlay');
-  var $albumModal    = $('.albumModal');
-  var $specialist    = $('#specialist');
-  var $play          = $('#play');
-  var $triangleUp    = $('.triangle-up');
-  var $triangleWhite = $('.triangle-white');
-  var $match         = $('#match');
-  var $guitarsModal  = $('.guitarsModal');
-  var $arrow         = $('.arrow');
-  var $main          = $('.main');
-  var tempHidden     = null
+  $allSquares          = $('.squaresquare');
+  var $navTitles       = $('.onepage-pagination').children().children().filter('.navtitle');
+  var $navClickTargets = $('.onepage-pagination li a, .onepage-pagination li span')
+  var $navHoverTarget  = $('.onepage-pagination')
+  var $overlay         = $('#overlay');
+  var $albumModal      = $('.albumModal');
+  var $specialist      = $('#specialist');
+  var $play            = $('#play');
+  var $triangleUp      = $('.triangle-up');
+  var $triangleWhite   = $('.triangle-white');
+  var $match           = $('#match');
+  var $guitarsModal    = $('.guitarsModal');
+  var $arrow           = $('.arrow');
+  var $main            = $('.main');
+  var toHide           = null
 
   $navTitles.addClass("hide");
 
   $('#perspective').css('background-image', 'url("./images/GEORGE_blur9-7.jpg")');
 
-  $('.onepage-pagination').hover(function(e){
+  $navHoverTarget.hover(function(e){
     navShowing = true;
-    tempHidden = $(this).children().children().filter('.hide')
-    tempHidden.removeClass("hide")
+    $navTitles.removeClass("hide")
+    $allSquares.removeClass("hide")
   },function(e){
+    var active = $allSquares.filter('.active');
+    var activeIndex = active[0].dataset.index;
+    toHide = activeIndex === "1" ? $allSquares : $allSquares.filter(function(index){
+      var elementPageIndex = index + 1;
+      return elementPageIndex > activeIndex;
+    })
     navShowing = false;
-    tempHidden.addClass("hide")
-    // var titleTarget = $(this).children().children().filter('.navtitle').stop()
-    // var hiddenTarget = $(this).children().children().filter('.hidden').stop()
-    // borderFixFade(titleTarget,300,0);
-    // borderFixFade(hiddenTarget,300,0,true)
+    $navTitles.addClass("hide")
+    toHide.addClass("hide")
   });
 
   $('#intro').on('click',function(){
